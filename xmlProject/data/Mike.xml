@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user xmlns="http://www.ftn.uns.ac.rs/naucniRad">
+    <username>Mike</username>
+    <password>$2a$10$VLKlk2fpEto1l01iZPfGtuGRz.xDHdpyF.l2EyrQ.vAILKEfAah36</password>
+    <name>Mike</name>
+    <lastName>Mikic</lastName>
+    <email>mikic@gmail.com</email>
+    <deleted>false</deleted>
+</user>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user>
+    <username>admin</username>
+    <password>$2a$10$RfIlpnltw.LA37GS9SDBQOSbOrgQvGZQWR1Tb/GFrLSTbClctRkIi</password>
+    <name>Mika</name>
+    <lastName>Lazic</lastName>
+    <email>mikica@gmail.com</email>
+    <role>Admin</role>
+    <deleted>false</deleted>
+</user>

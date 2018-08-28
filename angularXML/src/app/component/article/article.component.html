@@ -1,0 +1,10 @@
+<div id="editor"></div>
+  <button id="posaljiRad" type="button" class="btn btn-light" (click)="addArticle()" >Send article</button>
+  <div class="form-group" style="margin-top:30px;">
+      <input type="file" class="form-control-file" accept="text/xml" id="exampleInputFile" aria-describedby="fileHelp" (change)="getData($event)">
+  </div>
+  <div id="allArticles">
+      <ul *ngFor="let work of works">
+          <li>Lista naucnih radova</li>
+      </ul>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<author xmlns="http://www.ftn.uns.ac.rs/naucniRad">
+    <university>Univerzitet</university>
+    <city>Grad</city>
+    <state>Drzava</state>
+    <zipCode>234567</zipCode>
+    <address>Adresa</address>
+    <username>Caki</username>
+    <password>$2a$10$QgMyWKAp5yaikG.TCHX7UOs5JT8WZjS0CZ3FlS/BBMSbYKzjsukly</password>
+    <name>Cakana</name>
+    <lastName>Cakanic</lastName>
+    <eMail>caki@gmail.com</eMail>
+    <role>admin</role>
+</author>

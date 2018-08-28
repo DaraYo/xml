@@ -1,0 +1,138 @@
+<div>
+  <p></p>
+    <ngb-tabset>
+        <ngb-tab title="Authors">
+           <ng-template ngbTabContent>
+             <table class="table table-striped">
+               <thead>
+                 <tr>
+                  <th>
+                    #
+                  </th>
+                  <th>
+                    Username
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Lastname
+                  </th>
+                  <th>
+                    Email
+                  </th>
+                 </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let author of authors">
+                    <th>
+                      {{author.id}}
+                    </th>
+                    <td>
+                      {{author.username}}
+                    </td>
+                    <td>
+                      {{author.name}}
+                    </td>
+                    <td>
+                      {{author.lastName}}
+                    </td>
+                    <td>
+                      {{author.email}}
+                    </td>
+                  </tr>
+               </tbody>
+             </table>
+           </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Reviwers">
+           <ng-template ngbTabContent>
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                     <th>
+                       #
+                     </th>
+                     <th>
+                       Username
+                     </th>
+                     <th>
+                       Name
+                     </th>
+                     <th>
+                       Lastname
+                     </th>
+                     <th>
+                       Email
+                     </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let reviewer of reviewers">
+                       <th>
+                         {{reviewer.id}}
+                       </th>
+                       <td>
+                         {{reviewer.username}}
+                       </td>
+                       <td>
+                         {{reviewer.name}}
+                       </td>
+                       <td>
+                         {{reviewer.lastName}}
+                       </td>
+                       <td>
+                         {{reviewer.email}}
+                       </td>
+                     </tr>
+                  </tbody>
+                </table>
+           </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Editor">
+           <ng-template ngbTabContent>
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                     <th>
+                       #
+                     </th>
+                     <th>
+                       Username
+                     </th>
+                     <th>
+                       Name
+                     </th>
+                     <th>
+                       Lastname
+                     </th>
+                     <th>
+                       Email
+                     </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let editor of editors">
+                       <th>
+                         {{editor.id}}
+                       </th>
+                       <td>
+                         {{editor.username}}
+                       </td>
+                       <td>
+                         {{editor.name}}
+                       </td>
+                       <td>
+                         {{editor.lastName}}
+                       </td>
+                       <td>
+                         {{editor.email}}
+                       </td>
+                     </tr>
+                  </tbody>
+                </table>
+           </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>
+<router-outlet></router-outlet>

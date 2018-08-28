@@ -1,0 +1,24 @@
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+       <th>
+         #
+       </th>
+       <th>
+         Name
+       </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let article of articles">
+         <th>
+           {{article.id}}
+         </th>
+         <td>
+           {{article.name}}
+         </td>
+       </tr>
+    </tbody>
+  </table>
+</div>

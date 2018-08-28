@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: xmlProject
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Zveeezda
+Implementation-Vendor-Id: xmlProject
+Build-Jdk: 1.8.0_77
+Implementation-URL: http://projects.spring.io/spring-boot/xmlProject/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

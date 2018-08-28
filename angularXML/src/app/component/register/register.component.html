@@ -1,0 +1,34 @@
+<div>
+  <h3>Register user</h3>
+  <p>
+    Username:
+  </p>
+  <input [(ngModel)]="newUser.username">
+  <p>
+    Password:
+  </p>
+  <input [(ngModel)]="newUser.password">
+  <p>
+    Name:
+  </p>
+  <input [(ngModel)]="newUser.name">
+  <p>
+    Lastname:
+  </p>
+  <input [(ngModel)]="newUser.lastName">
+  <p>
+    Email:
+  </p>
+  <input [(ngModel)]="newUser.email">
+  <p>
+    Role:
+  </p>
+  <select [(ngModel)]="newUser.role">
+    <option>Admin</option>
+    <option>Autor</option>
+    <option>Reviewer</option>
+    <option>Editor</option>
+  </select>
+  <br>
+  <button (click)="register()">Register</button>
+</div>

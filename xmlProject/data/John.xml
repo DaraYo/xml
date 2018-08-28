@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user>
+    <username>John</username>
+    <password>123john</password>
+    <name>John</name>
+    <lastName>Walker</lastName>
+    <email>jackandjohny@gmail.com</email>
+    <role>Admin</role>
+    <deleted>false</deleted>
+</user>

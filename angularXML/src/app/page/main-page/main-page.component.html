@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+</head> 
+<body>
+    <nav class="navbar navbar-default navbar-expand-lg bg-inverse">
+        <!--<div class="navbar-header d-flex col">
+            <a class="navbar-brand" href=#>Home<b>page</b></a>
+        </div>-->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+
+            <!--<ul class="nav navbar-nav" routerLinkActive="active" *ngIf="!login">
+                <li class="nav-item"><a class="nav-link" routerLink="admin">Add</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="author">AllWorks</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="userpage">MyWorks</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="userpage">Recension</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="userpage">Evaluation</a></li>
+            </ul>-->
+            <ul class="nav navbar-nav navbar-right ml-auto">			
+                <li class="nav-item" *ngIf="login">
+                    <button type="button" (click)="loginForm(test)" class="btn btn-outline-info">Login</button>
+                </li>
+                <li class="nav-item" *ngIf="!login">
+                    <button type="button" (click)="logoutForm()" class="btn btn-outline-info">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <ngb-tabset>
+        <ngb-tab class="navbar-brand" title="HomePage">
+            <ng-template ngbTabContent>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Add" *ngIf="!login">
+            <ng-template ngbTabContent>
+                <app-article></app-article>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="AllWorks" *ngIf="!login">
+            <ng-template ngbTabContent>
+                    <div class="sidebar">
+                            <nav class="sidebar-nav">
+                              <ul class="nav">
+                                <li class="nav-title">Nav Title</li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <i class="nav-icon cui-speedometer"></i> Nav item
+                                  </a>
+                                </li>
+                                </ul>
+                                </nav>
+                                </div>
+                    <div class="md-form active-pink-2 mb-3">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>
+                                    Title
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let work of allworks">
+                                    <td>
+                                        {{work.title}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--Reviews:
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+       <th>
+         #
+       </th>
+       <th>
+         Author
+       </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let review of reviews">
+         <th>
+           {{review.id}}
+         </th>
+         <td>
+           {{review.author}}
+         </td>
+       </tr>
+    </tbody>
+  </table>
+</div>
+Recensions
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+       <th>
+         #
+       </th>
+       <th>
+         Author
+       </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let recension of recensions">
+         <th>
+           {{recension.id}}
+         </th>
+         <td>
+           {{recension.author}}
+         </td>
+       </tr>
+    </tbody>
+  </table>
+</div>-->
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="MyWorks" *ngIf="!login">
+            <ng-template ngbTabContent>
+                <ngb-tabset>
+                    <ngb-tab class="navbar-brand" title="Accepted">
+                        <ng-template ngbTabContent>
+                            <div class="md-form active-pink-2 mb-3">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            </div>
+                            <div id="complexSearch">
+                                <input class="form-control" type="text" [(ngModel)]="categorySearch" placeholder="category" aria-label="Search">
+                                <input class="form-control" type="text" [(ngModel)]="statusSearch" placeholder="status" aria-label="Search">
+                                <input class="form-control" type="text" [(ngModel)]="versionSearch" placeholder="version" aria-label="Search">
+                                <input class="form-control" type="text" [(ngModel)]="journalSearch" placeholder="journal" aria-label="Search">
+                                <input class="form-control" type="text" [(ngModel)]="volumeSearch" placeholder="volume" aria-label="Search">
+                                <input class="form-control" type="text" [(ngModel)]="issueSearch" placeholder="issue" aria-label="Search">
+                                <form class="form-inline">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd"
+                                                name="dp" [(ngModel)]="datepickerModel" ngbDatepicker #d="ngbDatepicker">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                                <hr/>
+                                <pre>Model: {{ model | json }}</pre>
+                                <div class="row">
+                                    <div class="col">
+                                        <div ngbDropdown class="d-inline-block">
+                                            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+                                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                                <button class="dropdown-item">Action - 1</button>
+                                                <button class="dropdown-item">Another Action</button>
+                                                <button class="dropdown-item">Something else is here</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Title
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let awork of aworks">
+                                        <td>
+                                            {{awork.title}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                    <ngb-tab class="navbar-brand" title="InProcedure">
+                        <ng-template ngbTabContent>
+                            <div class="md-form active-pink-2 mb-3">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            </div>
+                            <div>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Title
+                                            </th>
+                                            <th>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let pwork of pworks">
+                                            <td>
+                                                {{pwork.title}}
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark" (click)="delete(pwork.id)">Close</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab class="navbar-brand" title="Declined">
+                        <ng-template ngbTabContent>
+                            <div class="md-form active-pink-2 mb-3">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            </div>
+                            <div>
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            Title
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let dwork of dworks">
+                                            <td>
+                                                {{dwork.title}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </ngb-tab>
+                </ngb-tabset>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Recension" *ngIf="!login && role!='author'">
+            <ng-template ngbTabContent>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>
+                                Title
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let awork of aworks">
+                                <td>
+                                    {{awork.title}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Evaluation" *ngIf="!login && role=='editor'">
+            <ng-template ngbTabContent>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>
+                                Title
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let awork of aworks">
+                                <td>
+                                    {{awork.title}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+    <ng-template #test let-c="close" let-d="dismiss">
+            <div class="modal-body">
+               <div class="login" *ngIf="show">
+                  <app-login (login)="showing($event)"></app-login>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+            </div>
+          </ng-template>
+    <!--<router-outlet></router-outlet>-->
+    <!--<app-article></app-article>-->
+</body>
+</html>      
+
